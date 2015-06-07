@@ -660,9 +660,7 @@ a.button-one {
   padding: 10px 35px;
 }
 .banner-section {
-  padding: 50px 0;
   background: #ff6600;
-  text-align: center;
 }
 .banner-section h2 {
   color: #222222;
@@ -674,6 +672,7 @@ a.button-one {
   color: #ffffff;
   text-transform: uppercase;
   font-weight: 400;
+  display: block;
 }
 .banner-section h2 a {
   display: inline-block;
@@ -683,6 +682,46 @@ a.button-one {
   -webkit-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
   margin-left: 60px;
+  display: block;
+}
+.banner-section .banner-title {
+  display: inline-block;
+  width: 50%;
+  float: left;
+  margin: 50px 0 50px 50px;
+}
+.banner-section .banner-form {
+  display: inline-block;
+  float: right;
+  padding: 20px;
+  background: #ffffff;
+  margin: 25px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px #666666;
+  -webkit-box-shadow: 5px 5px 5px #666666;
+  -moz-box-shadow: 5px 5px 5px #666666;
+  -o-box-shadow: 5px 5px 5px #666666;
+}
+.banner-section .banner-form h2 {
+  color: #ff6600;
+  margin-bottom: 10px;
+}
+.banner-section .banner-form button {
+  background: #ff6600;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  border: 2px solid #ffffff;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
+  padding: 0.8em 2em;
 }
 .services-offer-section {
   padding: 50px 0 35px;

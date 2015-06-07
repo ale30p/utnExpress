@@ -5,6 +5,8 @@
 var gulp = require('gulp'),
     connect = require('gulp-connect'),
     inject = require('gulp-inject'),
+    less = require('gulp-less'),
+    minifyCss = require('gulp-minify-css'),
     wiredep = require('wiredep').stream;
 
 
@@ -22,10 +24,14 @@ gulp.task('server', function() {
 
 // Busca en las carpetas de estilos y javascript los archivos que hayamos creado
 // para inyectarlos en el index.html
-
 gulp.task('inject', function() {
-    var sources = gulp.src(['./app/scripts/**/*.js','!./app/scripts/main.js','./app/stylesheets/**/*.css']);
-    var importantFile = gulp.src(['./app/scripts/main.js']);
+    var sources = gulp.src([
+        './app/js/**/*.js',
+        './app/css/**/*.css',
+        '!./app/js/main.js', 
+        '!./app/js/vendor/**/*.js' 
+    ]);
+    var importantFile = gulp.src(['./app/js/main.js']);
     
     return gulp.src('index.html', {
         cwd: './app'
@@ -44,7 +50,6 @@ gulp.task('inject', function() {
 });
 
 // Inyecta las librerias que instalemos vía Bower
-
 gulp.task('wiredep', function() {
     gulp.src('./app/index.html')
     .pipe(wiredep({
@@ -66,12 +71,17 @@ gulp.task('html', function() {
 
 });
 
+gulp.task('less', function () {
+    gulp.src('./app/less/**/*.less')
+    .pipe(less())
+    .pipe(gulp.dest('./app/css'));
+});
 
 gulp.task('watch', function() {
+    gulp.watch(['./app/less/**/*.less'], ['less']);
     gulp.watch(['./app/**/*.html'], ['html']);
-    gulp.watch(['./app/scripts/**/*.js', './Gulpfile.js']);
-    gulp.watch(['./app/stylesheets/**/*.styl'], ['inject']);
-    gulp.watch(['./app/scripts/**/*.js', './Gulpfile.js'], ['inject']);
+    gulp.watch(['./app/js/**/*.js']);
+    gulp.watch(['./app/css/**/*.css'], ['inject']);
     gulp.watch(['./bower.json'], ['wiredep']);
 });
 

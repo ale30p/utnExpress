@@ -1,12 +1,4 @@
 UtnExpress.Models.Paquete = Backbone.Model.extend({
-	defaults: {
-		id: '',
-		codigo: '',
-		latitud: '',
-		longitud: '',
-		estado: ''
-	},
-
 	initialize: function () {
         console.log('Paquete has been initialized');
         this.on("invalid", function (model, error) {
@@ -23,6 +15,7 @@ UtnExpress.Models.Paquete = Backbone.Model.extend({
         }
     },	
 
-	urlRoot: 'http://localhost:80/gps/vehiculo/AAA002'
+	//urlRoot: 'http://localhost:80/gps/vehiculo/AAA002'
+    urlRoot: 'http://utnexpressapi.16mb.com/vehiculo/AAA001'
 
 });

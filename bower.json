@@ -17,6 +17,8 @@
   ],
   "dependencies": {
     "bootstrap": "~3.3.4",
-    "backbone": "~1.2.1"
+    "backbone": "~1.2.1",
+    "jquery-migrate": "~1.2.1",
+    "gmap3": "~6.0.0"
   }
 }

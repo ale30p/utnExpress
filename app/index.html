@@ -21,6 +21,7 @@
         <link rel="stylesheet" href="/css/jquery.bxslider.css">
         <link rel="stylesheet" href="/css/settings.css">
         <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/variables.css">
         <!-- endinject -->
     </head>
     <body>
@@ -69,7 +70,7 @@
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
-                            <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="" height="30" width="150"></a>
+                            <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="" height="30" width="100"></a>
                         </div>
 
                         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -351,7 +352,29 @@
                 ================================================== -->
             <section class="banner-section">
                 <div class="container">
-                    <h2>All You Need for building Creative &amp; Professional<a href="projects.html" class="button-one">click here</a></h2>
+                    <div class="banner-title">
+                        <h2>All You Need for building Creative &amp; Professional</h2>
+                        <a href="projects.html" class="button-one">click here</a>
+                    </div>
+                    <div class="banner-form">
+                        <h2>Seguimiento de sus envíos</h2>
+                        <form class="form-inline">
+                            <label class="radio-inline">
+                              <input type="radio" name="inlineRadioOptions" value="option1"> 
+                              N° Envío
+                            </label>
+                            <label class="radio-inline">
+                              <input type="radio" name="inlineRadioOptions" value="option2"> 
+                              N° de Referencia
+                            </label>
+                            <br>
+                            <div class="form-group">
+                                <input type="text" class="form-control">
+                            </div>
+                            <button type="submit" class="btn btn-default">Consultar</button>
+                            
+                        </form>
+                    </div>
                 </div>
             </section>
             <!-- End banner section -->

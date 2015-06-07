@@ -418,18 +418,48 @@ a.button-one {
 }
 
 .banner-section {
-    padding: 50px 0;
     background: @skin-color;
-    text-align: center;
     h2 {
         .heading2;
         margin-bottom: 0;
         color: @white;
         text-transform: uppercase;
         font-weight: 400;
+        display: block;
         a {
             .anchor;
             margin-left: 60px;
+            display: block;
+        }
+    }
+    .banner-title {
+        display: inline-block;
+        width: 50%;
+        float: left;
+        margin: 50px 0 50px 50px;
+    }
+    .banner-form {
+        display: inline-block;
+        float: right;
+        padding: 20px;
+        background: @white;
+        margin: 25px;
+        .radius(5px);
+        .box-shadow(5px 5px 5px #666);
+        h2 {
+            color: @skin-color;
+            margin-bottom: 10px;
+        }
+        button {
+            background: @skin-color;
+            color: @white;
+            font-size: 12px;
+            font-weight: 700;
+            font-family: @font;
+            text-transform: uppercase;
+            border: 2px solid @white;
+            .radius(2px);
+            padding: 0.8em 2em;
         }
     }
 }
