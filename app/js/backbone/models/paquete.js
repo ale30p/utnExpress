@@ -1,21 +1,26 @@
 UtnExpress.Models.Paquete = Backbone.Model.extend({
-	initialize: function () {
-        console.log('Paquete has been initialized');
-        this.on("invalid", function (model, error) {
-            console.log("Houston, we have a problem: " + error);
+	//urlRoot: 'http://utnexpressapi.16mb.com/vehiculo',
+    url: 'http://localhost:80/gps/vehiculo',
+    idAttribute: 'patente',
+    default: {
+        id: '',
+        patente: '',
+        latitud: '',
+        longitud: '',
+        estado: ''
+    },
+    initialize: function (attr) {
+        var _this = this;
+        _.extend(this, Backbone.Events);
+        this.on('alert', function(msg){
+            console.log(msg);
         });
-    },
-    constructor: function (attributes, options) {
-        console.log('Paquete\'s constructor had been called');
-        Backbone.Model.apply(this, arguments);
-    },
-    validate: function (attr) {
-        if (!attr.codigo) {
-            return "Invalid PaqueteName supplied.";
-        }
-    },	
+        this.trigger('alert', this.url());
 
-	//urlRoot: 'http://localhost:80/gps/vehiculo/AAA002'
-    urlRoot: 'http://utnexpressapi.16mb.com/vehiculo/AAA001'
-
+        this.fetch({
+            success: function(data) {
+                var seguimientoView = new UtnExpress.Views.Seguimiento({el:$('#mapSeguimiento'), model: data});
+            }
+        });
+    }	
 });

@@ -1,16 +1,20 @@
 (function() {
+	'use strict';
 
-	console.log('main.js loaded');
+	window.collection.sectionsCollection = new UtnExpress.Collection.Sections();
+	window.views.sectionView = new UtnExpress.Views.Section({el:$('#container'), collection:window.collection.sectionsCollection});
+	window.collection.sectionsCollection.add([{id:'header', className:'clearfix'}, {id:'footer', className:''}]);
 
-	// Now let us try to retrieve a book [READ]
-	var paquete = new UtnExpress.Models.Paquete({ codigo: 'AAA002' });
-	paquete.fetch({
-	    success: function (paqueteResponse) {
-	        console.log("Found the paquete: " + paqueteResponse);
-	    }
+
+	$('#btnConsultarEnvio').click(function(e) {
+		e.preventDefault();
+		var codVehiculo = $('#codigoConsulta').val();
+		var paquete = new UtnExpress.Models.Paquete({patente: codVehiculo});
 	});
-})();
 
+	window.routers.app = new UtnExpress.Routers.App();
+	Backbone.history.start();
+})();
 
 /*jshint jquery:true */
 /*global $:true */
@@ -210,48 +214,6 @@ $(document).ready(function($) {
 
 	}
 	
-	/*-------------------------------------------------*/
-	/* = slider Testimonial
-	/*-------------------------------------------------*/
-
-	var slidertestimonial = $('.bxslider');
-	try{		
-		slidertestimonial.bxSlider({
-			mode: 'vertical'
-		});
-	} catch(err) {
-	}
-
-	/* ---------------------------------------------------------------------- */
-	/*	Contact Form
-	/* ---------------------------------------------------------------------- */
-
-	var submitContact = $('#submit_contact'),
-		message = $('#msg');
-
-	submitContact.on('click', function(e){
-		e.preventDefault();
-
-		var $this = $(this);
-		
-		$.ajax({
-			type: "POST",
-			url: 'contact.php',
-			dataType: 'json',
-			cache: false,
-			data: $('#contact-form').serialize(),
-			success: function(data) {
-
-				if(data.info !== 'error'){
-					$this.parents('form').find('input[type=text],textarea,select').filter(':visible').val('');
-					message.hide().removeClass('success').removeClass('error').addClass('success').html(data.msg).fadeIn('slow').delay(5000).fadeOut('slow');
-				} else {
-					message.hide().removeClass('success').removeClass('error').addClass('error').html(data.msg).fadeIn('slow').delay(5000).fadeOut('slow');
-				}
-			}
-		});
-	});
-
 	/* ---------------------------------------------------------------------- */
 	/*	Header animate after scroll
 	/* ---------------------------------------------------------------------- */
@@ -289,30 +251,4 @@ $(document).ready(function($) {
 		init();
 		
 	})();
-
 });
-
-/* ---------------------------------------------------------------------- */
-/*	map street view mode function
-/* ---------------------------------------------------------------------- */
-function initialize() {
-	var bryantPark = new google.maps.LatLng(35.639543,-77.371199); //Change a map street view cordinate here! {"lat":"-33.880641", "lon":"151.204298"}
-	var panoramaOptions = {
-		position: bryantPark,
-		pov: {
-			heading: 165,
-			pitch: 0
-		},
-		zoom: 1
-	};
-	var myPano = new google.maps.StreetViewPanorama(
-		document.getElementById('map'),
-		panoramaOptions);
-	myPano.setVisible(true);
-}
-
-try {
-	google.maps.event.addDomListener(window, 'load', initialize);
-} catch(err) {
-
-}
