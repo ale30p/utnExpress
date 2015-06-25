@@ -19,6 +19,7 @@
     "bootstrap": "~3.3.4",
     "backbone": "~1.2.1",
     "jquery-migrate": "~1.2.1",
-    "gmap3": "~6.0.0"
+    "gmap3": "~6.0.0",
+    "handlebars": "~3.0.3"
   }
 }
