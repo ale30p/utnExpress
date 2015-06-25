@@ -28,6 +28,10 @@ UtnExpress.Views.Section = Backbone.View.extend({
 		    	$('#' + modelAbove.id).after('<section id="'+model.id+'" class="'+ model.get('className') +'">'+html+'</section>');
 		    	$('.bxslider').bxSlider({mode: 'vertical'});
 		    	break;
+            case 'clienteSection' :
+                $('#' + modelAbove.id).after('<section id="'+model.id+'" class="'+ model.get('className') +'">'+html+'</section>');
+                var clienteView = new UtnExpress.Views.Cliente({el: $('#cliente-body')});
+                break;
 		    default:
 		    	$('#' + modelAbove.id).after('<section id="'+model.id+'" class="'+ model.get('className') +'">'+html+'</section>');
 		} 

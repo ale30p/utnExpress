@@ -63,18 +63,21 @@
         <!-- endbower -->
         
         <!-- inject:js -->
-        <script src="/js/init.js"></script>
-        <script src="/js/templates.js"></script>
-        <script src="/js/backbone/events.js"></script>
+        <script src="/js/backbone/init.js"></script>
         <script src="/js/backbone/router.js"></script>
+        <script src="/js/backbone/templates.js"></script>
+        <script src="/js/backbone/core/baseRouter.js"></script>
+        <script src="/js/backbone/core/baseView.js"></script>
         <!-- endinject -->
 
         <!-- models:js -->
+        <script src="/js/backbone/models/app.js"></script>
         <script src="/js/backbone/models/pais.js"></script>
         <script src="/js/backbone/models/paquete.js"></script>
         <script src="/js/backbone/models/provincia.js"></script>
         <script src="/js/backbone/models/section.js"></script>
         <script src="/js/backbone/models/servicio.js"></script>
+        <script src="/js/backbone/models/session.js"></script>
         <script src="/js/backbone/models/usuario.js"></script>
         <!-- endinject -->
 
@@ -83,8 +86,13 @@
         <!-- endinject -->
 
         <!-- views:js -->
+        <script src="/js/backbone/views/clientePaqueteView.js"></script>
+        <script src="/js/backbone/views/clientePaquetesView.js"></script>
+        <script src="/js/backbone/views/clienteServicioView.js"></script>
+        <script src="/js/backbone/views/clienteServiciosView.js"></script>
+        <script src="/js/backbone/views/clienteView.js"></script>
         <script src="/js/backbone/views/sectionView.js"></script>
-        <script src="/js/backbone/views/seguimientoView.js"></script>
+        <script src="/js/backbone/views/usuarioView.js"></script>
         <!-- endinject -->
         
         <script src="js/vendor/jquery.bxslider.min.js"></script>
@@ -96,7 +104,7 @@
         <script src="js/vendor/jquery.themepunch.revolution.min.js"></script>
         
         <!-- head:js -->        
-        <script src="/js/main.js"></script>        
+        <script src="/js/backbone/main.js"></script>        
         <!-- endinject -->
     </body>
 </html>

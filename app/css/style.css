@@ -1538,8 +1538,76 @@ a.button-one {
   color: #ff6600;
 }
 /*-------------------------------------------------*/
+/* =  seguimiento pages
+/*-------------------------------------------------*/
+.lstStatusOfRequest {
+  display: inline-block;
+  margin: 30px 0 0 0;
+  padding-left: 0;
+}
+.lstStatusOfRequest li {
+  float: left;
+  display: inline;
+  width: 85px;
+  color: #000;
+  text-align: center;
+  margin: 0 7px;
+}
+.lstStatusOfRequest li strong,
+.lstStatusOfRequest li span {
+  display: block;
+}
+.lstStatusOfRequest li strong {
+  margin-bottom: 5px;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 20px;
+  background: #666666;
+  height: 50px;
+  width: 50px;
+  border-radius: 50px;
+  margin-left: 15px;
+}
+.lstStatusOfRequest li strong span {
+  color: #ffffff;
+  font-size: 30px;
+  padding-top: 4px;
+}
+.lstStatusOfRequest li .ok strong {
+  background-position: center 0;
+}
+.lstStatusOfRequest li span {
+  font-size: 11px;
+  color: #4d4d4d;
+}
+.lstStatusOfRequest li.ok strong {
+  background: #ff6600;
+}
+.lstStatusOfRequest .lnk {
+  float: left;
+  display: inline;
+  width: 510px;
+  text-align: left;
+  margin: 10px 0;
+}
+.lstStatusOfRequest .lnk a {
+  color: #000;
+  text-decoration: underline;
+}
+.lstStatusOfRequest .lnk a:hover {
+  text-decoration: none;
+}
+.map-google {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+/*-------------------------------------------------*/
 /* =  services pages
 /*-------------------------------------------------*/
+.tituloLogin {
+  height: 150px;
+}
 .services-page-section {
   padding: 60px 0 30px;
 }

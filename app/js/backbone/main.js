@@ -1,6 +1,9 @@
 (function() {
 	'use strict';
 
+	//var app = new UtnExpress.Models.App();
+	//app.start();
+
 	window.collection.sectionsCollection = new UtnExpress.Collection.Sections();
 	window.views.sectionView = new UtnExpress.Views.Section({el:$('#container'), collection:window.collection.sectionsCollection});
 	window.collection.sectionsCollection.add([{id:'header', className:'clearfix'}, {id:'footer', className:''}]);

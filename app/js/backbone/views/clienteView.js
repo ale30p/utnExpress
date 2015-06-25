@@ -1,5 +1,16 @@
-UtnExpress.Views.Seguimiento = Backbone.View.extend({
-	template: utnExpress.templates.seguimiento,
+UtnExpress.Views.Cliente = Backbone.View.extend({
+	template: utnExpress.templates.cliente,
+	initialize: function() {
+		this.render();
+	},
+	render: function(eventName) {
+		$(this.$el).html(this.template({}));
+	}
+});
+
+
+/*UtnExpress.Views.Cliente = Backbone.View.extend({
+	template: utnExpress.templates.cliente,
 	initialize: function() {
 		google.maps.event.addDomListener(window, 'load', this.mapInitialize());
 		this.render();
@@ -17,4 +28,4 @@ UtnExpress.Views.Seguimiento = Backbone.View.extend({
         };
         var map = new google.maps.Map($('#mapSeguimiento'), mapOptions);
     }
-});
+});*/

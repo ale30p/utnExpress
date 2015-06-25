@@ -2,7 +2,7 @@ UtnExpress.Models.Paquete = Backbone.Model.extend({
 	//urlRoot: 'http://utnexpressapi.16mb.com/vehiculo',
     url: 'http://localhost:80/gps/vehiculo',
     idAttribute: 'patente',
-    default: {
+    defaults: {
         id: '',
         patente: '',
         latitud: '',
