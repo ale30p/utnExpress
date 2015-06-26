@@ -26,13 +26,13 @@ UtnExpress.Routers.App = Backbone.Router.extend({
 
 	about: function() {
 		window.collection.sectionsCollection._deleteSection();
-		window.collection.sectionsCollection.add({id:'pageBannerSection', className:'page-banner-section'}, {at: 1});
+		window.collection.sectionsCollection.add({id:'pageBannerSection', className:'page-banner-section', titulo: 'About'}, {at: 1});
 		window.collection.sectionsCollection.add({id:'about', className:'about-section'}, {at: 2});
 	},
 
 	servicios: function() {
 		window.collection.sectionsCollection._deleteSection();
-		window.collection.sectionsCollection.add({id:'pageBannerSection', className:'page-banner-section'}, {at: 1});
+		window.collection.sectionsCollection.add({id:'pageBannerSection', className:'page-banner-section', titulo: 'Servicio'}, {at: 1});
 		window.collection.sectionsCollection.add({id:'servicios', className:'single-page-section'}, {at: 2});
 	},
 
@@ -44,13 +44,13 @@ UtnExpress.Routers.App = Backbone.Router.extend({
 
 	registro: function() {
 		window.collection.sectionsCollection._deleteSection();
-		window.collection.sectionsCollection.add({id:'pageBannerSection', className:'page-banner-section'}, {at: 1});
+		window.collection.sectionsCollection.add({id:'pageBannerSection', className:'page-banner-section', titulo: 'Registro'}, {at: 1});
 		window.collection.sectionsCollection.add({id:'resgistroSection', className:'services-offer-section'}, {at: 2});
 	},
 
 	cliente: function() {
 		window.collection.sectionsCollection._deleteSection();
-		window.collection.sectionsCollection.add({id:'pageBannerSection', className:'page-banner-section'}, {at: 1});
+		window.collection.sectionsCollection.add({id:'pageBannerSection', className:'page-banner-section', titulo: 'Cliente'}, {at: 1});
 		window.collection.sectionsCollection.add({id:'clienteSection', className:'services-page-section'}, {at: 2});
 	},
 	

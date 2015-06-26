@@ -11,8 +11,7 @@ UtnExpress.Views.Section = Backbone.View.extend({
         
         var index = this.collection.indexOf(model);
         var modelAbove = this.collection.at(index-1);
-        
-        var html = utnExpress.templates[model.id]({entity: model});
+        var html = utnExpress.templates[model.id](model.toJSON());
         switch(model.id) {
 		    case 'header':
 		    	el.append('<header id="'+model.id+'" class="'+ model.get('className') +'">'+html+'</header>');	
@@ -33,7 +32,7 @@ UtnExpress.Views.Section = Backbone.View.extend({
                 var clienteView = new UtnExpress.Views.Cliente({el: $('#cliente-body')});
                 break;
 		    default:
-		    	$('#' + modelAbove.id).after('<section id="'+model.id+'" class="'+ model.get('className') +'">'+html+'</section>');
+                $('#' + modelAbove.id).after('<section id="'+model.id+'" class="'+ model.get('className') +'">'+html+'</section>');
 		} 
     },
     removeOne: function(model) {
