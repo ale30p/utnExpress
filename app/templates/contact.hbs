@@ -1,29 +1,33 @@
 <div class="container">
 	<div class="col-md-4">
 		<div class="contact-info">
-			<h2>Contact Info</h2>
-			<p>You can contact or visit us in our office from Monday to Friday from 8:00 - 17:00</p>
+			<h2>Información de contacto</h2>
+			<p>Puede ponerse en contacto o visitarnos durante el tiempo de trabajo.</p>
 			<ul class="information-list">
-				<li><i class="fa fa-map-marker"></i><span>907 N Randolph street, Arlington County, Virginia, United States</span></li>
-				<li><i class="fa fa-phone"></i><span>+1 703-697-1776</span><span>+1 605-315-8544</span></li>
-				<li><i class="fa fa-envelope-o"></i><a href="#">nunforest@gmail.com</a></li>
+				<li><i class="fa fa-map-marker"></i><span>Frech 429 Resistencia - Chaco</span></li>
+				<li><i class="fa fa-phone"></i><span>362 - 4678 - 9012</span></li>
+				<li><i class="fa fa-envelope-o"></i><a href="#">suporte@utnexpress.com</a></li>
 			</ul>						
 		</div>
 	</div>
 	<div class="col-md-8">
 		<form id="contact-form">
-			<h2>Send us a message</h2>
+			<h2>Envienos su consulta</h2>
 			<div class="row">
 				<div class="col-md-6">
-					<input name="name" id="name" placeholder="Name" type="text">
+					<input name="name" id="name" placeholder="Nombre" type="text">
 				</div>
 				<div class="col-md-6">
 					<input name="mail" id="mail" placeholder="Email" type="text">
 				</div>
 			</div>
-			<textarea name="comment" id="comment" placeholder="Message"></textarea>
-			<input id="submit_contact" value="Send Message" type="submit">
-			<div id="msg" class="message"></div>
+			<textarea name="comment" id="message" placeholder="Mensaje"></textarea>
+			<input id="submit_contact" value="Enviar mensaje" type="submit">
+			<div class="loader" style="display:none "><img src="../images/bx_loader.gif"></div>
+			<div id="messageFormContainer" class="alert alert-success" style="display:none">
+				<button type="button" class="close">&times;</button>
+				<span id="messageForm"></span>
+			</div>
 		</form>
 	</div>
 </div>

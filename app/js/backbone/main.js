@@ -1,22 +1,23 @@
+
 (function() {
 	'use strict';
 
-	//var app = new UtnExpress.Models.App();
-	//app.start();
+	Handlebars.registerHelper('ifvalue', function (conditional, options) {
+	  if (options.hash.value === conditional) {
+	    return options.fn(this);
+	  } else {
+	    return options.inverse(this);
+	  }
+	});
 
 	window.collection.sectionsCollection = new UtnExpress.Collection.Sections();
 	window.views.sectionView = new UtnExpress.Views.Section({el:$('#container'), collection:window.collection.sectionsCollection});
 	window.collection.sectionsCollection.add([{id:'header', className:'clearfix'}, {id:'footer', className:''}]);
 
-
-	$('#btnConsultarEnvio').click(function(e) {
-		e.preventDefault();
-		var codVehiculo = $('#codigoConsulta').val();
-		var paquete = new UtnExpress.Models.Paquete({patente: codVehiculo});
-	});
-
 	window.routers.app = new UtnExpress.Routers.App();
 	Backbone.history.start();
+
+	
 })();
 
 /*jshint jquery:true */
@@ -26,6 +27,13 @@ var $ = jQuery.noConflict();
 
 $(document).ready(function($) {
 	"use strict";
+
+	/*$('#btnConsultarEnvio').click(function(e) {
+		e.preventDefault();
+		var codVehiculo = $('#codigoConsulta').val();
+		var paquete = new UtnExpress.Models.Paquete({patente: codVehiculo});
+	});*/
+
 
 	/* global google: false */
 	/*jshint -W018 */

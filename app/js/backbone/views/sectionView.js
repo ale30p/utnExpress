@@ -1,5 +1,8 @@
 UtnExpress.Views.Section = Backbone.View.extend({
-	initialize: function() {
+	events: {
+        'click .side-navigation-list': 'activeItemSideNav'
+    },
+    initialize: function() {
 		this.listenTo(this.collection, 'add', this.addOne);
 		this.listenTo(this.collection, 'remove', this.removeOne);
 	},
@@ -84,5 +87,14 @@ UtnExpress.Views.Section = Backbone.View.extend({
             fullScreenOffsetContainer: ".header" 
     	};
     	return options;
+    },
+    activeItemSideNav: function(e) {
+        e.preventDefault();
+        $.each($(e.target.parentElement.children), function() {
+          $(this).removeClass('active');
+        });
+        $('#paquetesDetalles').html('');
+        $(e.target).addClass('active');
+        window.location.href = ($(e.target).attr('href'));
     }
 });

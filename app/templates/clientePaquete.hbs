@@ -1,81 +1,94 @@
 <div class="row">
-	<div class="col-md-4">
-		<div class="direccion-retiro">
-			<h3>Dirección del comprador</h3>
-			<p><strong>Alejandro</strong></p>
-			<p>Mi Casa</p>
-			<p>Carlos Pellegrini , 756 3F</p>
-			<p><strong>Localidad:</strong> RESISTENCIA</p>
-			<p><strong>Provincia:</strong> CHACO</p>
-			<p><strong>CP:</strong> 3500</p>
+	<div class="col-md-8">
+		<div class="row">
+			<div class="col-md-12">
+			<h2>Estado del paquete</h2>
+				<ul class="lstStatusOfRequest">
+					<li class="step1 {{#ifvalue estado value="1"}} ok{{/ifvalue}}">
+						<strong>
+							<span>1</span>
+						</strong>
+						<p class="titStatus">
+							Pedido realizado
+						</p>
+						<p>&nbsp;</p>
+					</li>
+					<li class="step2 {{#ifvalue estado value="2"}} ok{{/ifvalue}}">
+						<strong>
+							<span>2</span>
+						</strong>
+						<p class="titStatus">
+							Pago autorizado
+						</p>
+						<p>&nbsp;</p>
+					</li>
+					<li class="step3 {{#ifvalue estado value="3"}} ok{{/ifvalue}}">
+						<strong>
+							<span>3</span>
+						</strong>
+						<p class="titStatus">
+							Envío en preparación
+						</p>
+						<p>&nbsp;</p>
+					</li>
+					<li class="step4 {{#ifvalue estado value="4"}} ok{{/ifvalue}}">
+						<strong>
+							<span>4</span>
+						</strong>
+						<p class="titStatus">Producto en tránsito</p>
+						<p class="trace_request">
+					</li>
+					<li class="step5 {{#ifvalue estado value="5"}} ok{{/ifvalue}}">
+						<strong>
+							<span>5</span>
+						</strong>
+						<p class="titStatus">
+							Producto entregado
+						</p>
+						<p>&nbsp;</p>
+					</li>
+				</ul>
+			</div>
 		</div>
-		</div>
-	<div class="col-md-4">
-		<div class="direccion-entrega">
-			<h3>Dirección del comprador</h3>
-			<p><strong>Alejandro Pereyra</strong></p>
-			<p>Mi Casa</p>
-			<p>Carlos Pellegrini , 756 3F</p>
-			<p><strong>Localidad:</strong> RESISTENCIA</p>
-			<p><strong>Provincia:</strong> CHACO</p>
-			<p><strong>CP:</strong> 3500</p>
+		<div class="row">
+			<div class="col-md-4">
+				<div class="direccion-retiro">
+					<h3>Remitente</h3>
+					<p><strong>{{remitente.nombre}} {{remitente.apellido}}</strong></p>
+					<p><strong>Lugar de entrega: </strong>{{remitente.domicilio.denominacion}}</p>
+					<p><strong>Dirección: </strong>{{remitente.domicilio.calle}}, {{remitente.domicilio.numero}}</p>
+					<p><strong>Localidad:</strong> {{remitente.domicilio.localidad}}</p>
+					<p><strong>Provincia:</strong> {{remitente.domicilio.provincia}}</p>
+					<p><strong>País:</strong> {{remitente.domicilio.pais}}</p>
+					<p><strong>CP:</strong> {{remitente.domicilio.cp}}</p>
+				</div>
+				</div>
+			<div class="col-md-4">
+				<div class="direccion-entrega">
+					<h3>Destinatario</h3>
+					<p><strong>{{destinatario.nombre}} {{destinatario.apellido}}</strong></p>
+					<p><strong>Lugar de entrega: </strong>{{destinatario.domicilio.denominacion}}</p>
+					<p><strong>Dirección: </strong>{{destinatario.domicilio.calle}}, {{destinatario.domicilio.numero}}</p>
+					<p><strong>Localidad:</strong> {{destinatario.domicilio.localidad}}</p>
+					<p><strong>Provincia:</strong> {{destinatario.domicilio.provincia}}</p>
+					<p><strong>País:</strong> {{destinatario.domicilio.pais}}</p>
+					<p><strong>CP:</strong> {{destinatario.domicilio.cp}}</p>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="forma-pago">
+					<h3>Forma de pago</h3>
+					<p><strong>{{contrato.forma_pago}}</strong></p>
+					{{#ifvalue contrato.forma_pago value="Tarjeta de Credito"}}
+					    <p>Número de cuotas: {{contrato.cant_coutas}}</p>
+					{{/ifvalue}}
+				</div>
+			</div>
 		</div>
 	</div>
 	<div class="col-md-4">
-		<div class="forma-pago">
-			<h3>Forma de pago</h3>
-			<p><strong>Tarjeta de Crédito</strong></p>
-			<p>Número de cuotas: 3</p>
-			<p>Carlos Pellegrini , 756 3F</p>
-		</div>
+		<div id="googleMap"></div>
 	</div>
 </div>
-<div class="row">
-	<div class="col-md-12">
-		<ul class="lstStatusOfRequest">
-			<li class="step1">
-				<strong>
-					<span>1</span>
-				</strong>
-				<p class="titStatus">
-					Pedido realizado
-				</p>
-				<p>&nbsp;</p>
-			</li>
-			<li class="step2">
-				<strong>
-					<span>2</span>
-				</strong>
-				<p class="titStatus">
-					Pago autorizado
-				</p>
-				<p>&nbsp;</p>
-			</li>
-			<li class="step3">
-				<strong>
-					<span>3</span>
-				</strong>
-				<p class="titStatus">
-					Envío en preparación
-				</p>
-				<p>&nbsp;</p>
-			</li>
-			<li class="step4 ok">
-				<strong>
-					<span>4</span>
-				</strong>
-				<p class="titStatus">Producto(s) en tránsito</p>
-				<p class="trace_request">
-			</li>
-			<li class="step5">
-				<strong>
-					<span>5</span>
-				</strong>
-				<p class="titStatus">
-					Producto(s) entregado(s)
-				</p>
-				<p>&nbsp;</p>
-			</li>
-		</ul>
-	</div>
-</div>
+
+

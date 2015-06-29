@@ -24,7 +24,7 @@
         <link rel="stylesheet" href="/css/variables.css">
         <!-- endinject -->
 
-        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
+        <script src="http://maps.google.com/maps/api/js?sensor=false&amp;language=es"></script>
         
     </head>
     <body>
@@ -58,8 +58,9 @@
         <script src="lib/underscore/underscore.js"></script>
         <script src="lib/backbone/backbone.js"></script>
         <script src="lib/jquery-migrate/jquery-migrate.js"></script>
-        <script src="lib/gmap3/dist/gmap3.js"></script>
+        <script src="lib/gmap3/dist/gmap3.min.js"></script>
         <script src="lib/handlebars/handlebars.js"></script>
+        <script src="lib/backbone.crossdomain/Backbone.CrossDomain.js"></script>
         <!-- endbower -->
         
         <!-- inject:js -->
@@ -72,6 +73,7 @@
 
         <!-- models:js -->
         <script src="/js/backbone/models/app.js"></script>
+        <script src="/js/backbone/models/contact.js"></script>
         <script src="/js/backbone/models/pageBanner.js"></script>
         <script src="/js/backbone/models/pais.js"></script>
         <script src="/js/backbone/models/paquete.js"></script>
@@ -83,15 +85,18 @@
         <!-- endinject -->
 
         <!-- collections:js -->
+        <script src="/js/backbone/collections/paquetesCollection.js"></script>
         <script src="/js/backbone/collections/sectionsCollection.js"></script>
         <!-- endinject -->
 
         <!-- views:js -->
+        <script src="/js/backbone/views/clienteEnvioView.js"></script>
         <script src="/js/backbone/views/clientePaqueteView.js"></script>
         <script src="/js/backbone/views/clientePaquetesView.js"></script>
         <script src="/js/backbone/views/clienteServicioView.js"></script>
         <script src="/js/backbone/views/clienteServiciosView.js"></script>
         <script src="/js/backbone/views/clienteView.js"></script>
+        <script src="/js/backbone/views/contactView.js"></script>
         <script src="/js/backbone/views/sectionView.js"></script>
         <script src="/js/backbone/views/usuarioView.js"></script>
         <!-- endinject -->
