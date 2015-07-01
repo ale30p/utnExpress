@@ -11,7 +11,7 @@ UtnExpress.Views.ClientePaquetes = Backbone.View.extend({
 	},
 	showDetalle: function(e) {
 		e.preventDefault();
-		var paquete = this.collection.get($(e.target).data('id'));
+		var paquete = this.collection.get($(e.target).data('codigo'));
 		var clientePaqueteView = new UtnExpress.Views.ClientePaquete({el: $('#paquetesDetalles'), model: paquete});
 	}
 });

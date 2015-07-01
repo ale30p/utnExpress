@@ -10,6 +10,7 @@ UtnExpress.Routers.App = Backbone.Router.extend({
 		'cliente/tarifa': 'clienteTarifa',
 		'cliente/paquetes': 'clientePaquetes',
 		'cliente/servicios': 'clienteServicios',
+		'seguimiento/:codigo': 'seguimiento',
 		'login' : 'showLogin',
 		'profile' : 'showProfile',
 		'*default' : 'showHome'
@@ -71,7 +72,6 @@ UtnExpress.Routers.App = Backbone.Router.extend({
 		window.collection.sectionsCollection.add({id:'clienteSection', className:'services-page-section'}, {at: 2});
 	},
 	
-
 	clienteEnvio: function() {
 		var clienteEnvioView = new UtnExpress.Views.ClienteEnvio({el: $('#cliente-body')});
 	},
@@ -83,5 +83,17 @@ UtnExpress.Routers.App = Backbone.Router.extend({
 	clienteServicios: function() {
 		var clienteServiciosView = new UtnExpress.Views.ClienteServicios({el: $('#cliente-body')});
 	},
+
+	seguimiento: function(codigo) {
+		window.collection.sectionsCollection._deleteSection();
+		window.collection.sectionsCollection.add({id:'pageBannerSection', className:'page-banner-section', titulo: 'Seguimiento'}, {at: 1});
+		window.collection.sectionsCollection.add({id:'seguimientoSection', className:'services-page-section'}, {at: 2});
+		var paquete = new UtnExpress.Models.Paquete({codigo:codigo});
+		paquete.fetch({
+    		success: function(){
+	            var clientePaqueteView = new UtnExpress.Views.ClientePaquete({el: $('#paquetesDetalles'), model: paquete});
+    	    }
+        });
+	}
 
 });

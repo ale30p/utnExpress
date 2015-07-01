@@ -298,6 +298,14 @@ p {
     .paragraph;
 }
 
+.offset-left {
+    float: left;
+}
+
+.offset-right {
+    float: right;
+}
+
 /*-------------------------------------------------*/
 /* =  content
 /*-------------------------------------------------*/
@@ -844,6 +852,7 @@ a.button-one {
 }
 .accord-title {
     position: relative;
+    cursor: pointer;
     h2 {
         padding: 10px 15px;
         background: #f7f7f7;
@@ -1765,6 +1774,7 @@ a.button-one {
 }
 
 #contact-form,
+.form-envio,
 .comment-form {
     input[type="text"],
     textarea {
@@ -1798,6 +1808,18 @@ a.button-one {
     }
     input[type="submit"]:hover {
         opacity: 0.7;
+    }
+    .btn-cancelar {
+        padding: 12px 30px;
+        outline: none;
+        border: none;
+        background: @color2;
+        color: @white;
+        font-size: 13px;
+        font-family: @font;
+        .transition; 
+        margin: 0 0 10px 10px;
+        cursor: pointer;
     }
     .message {
         height:30px;

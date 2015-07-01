@@ -1,6 +1,7 @@
 UtnExpress.Views.Section = Backbone.View.extend({
 	events: {
-        'click .side-navigation-list': 'activeItemSideNav'
+        'click .side-navigation-list': 'activeItemSideNav',
+        'click #consultarEnvio': 'consultarEnvio',
     },
     initialize: function() {
 		this.listenTo(this.collection, 'add', this.addOne);
@@ -96,5 +97,10 @@ UtnExpress.Views.Section = Backbone.View.extend({
         $('#paquetesDetalles').html('');
         $(e.target).addClass('active');
         window.location.href = ($(e.target).attr('href'));
+    },
+    consultarEnvio: function(e) {
+        e.preventDefault();
+        var url = $(e.target).attr('href') + '/' + $(e.target.parentElement).find('#codigoConsulta').val();
+        window.location.href = url;
     }
 });

@@ -539,6 +539,12 @@ p {
   line-height: 20px;
   margin: 0 0 10px;
 }
+.offset-left {
+  float: left;
+}
+.offset-right {
+  float: right;
+}
 /*-------------------------------------------------*/
 /* =  content
 /*-------------------------------------------------*/
@@ -1193,6 +1199,7 @@ a.button-one {
 }
 .accord-title {
   position: relative;
+  cursor: pointer;
 }
 .accord-title h2 {
   padding: 10px 15px;
@@ -2245,8 +2252,10 @@ a.button-one {
   border-bottom: none;
 }
 #contact-form input[type="text"],
+.form-envio input[type="text"],
 .comment-form input[type="text"],
 #contact-form textarea,
+.form-envio textarea,
 .comment-form textarea {
   width: 100%;
   padding: 10px 20px;
@@ -2262,16 +2271,20 @@ a.button-one {
   font-family: 'Montserrat', sans-serif;
 }
 #contact-form input[type="text"]:focus,
+.form-envio input[type="text"]:focus,
 .comment-form input[type="text"]:focus,
 #contact-form textarea:focus,
+.form-envio textarea:focus,
 .comment-form textarea:focus {
   border: 1px solid #ff6600;
 }
 #contact-form textarea,
+.form-envio textarea,
 .comment-form textarea {
   height: 146px;
 }
 #contact-form input[type="submit"],
+.form-envio input[type="submit"],
 .comment-form input[type="submit"] {
   padding: 12px 30px;
   outline: none;
@@ -2287,10 +2300,29 @@ a.button-one {
   margin-bottom: 10px;
 }
 #contact-form input[type="submit"]:hover,
+.form-envio input[type="submit"]:hover,
 .comment-form input[type="submit"]:hover {
   opacity: 0.7;
 }
+#contact-form .btn-cancelar,
+.form-envio .btn-cancelar,
+.comment-form .btn-cancelar {
+  padding: 12px 30px;
+  outline: none;
+  border: none;
+  background: #666666;
+  color: #ffffff;
+  font-size: 13px;
+  font-family: 'Montserrat', sans-serif;
+  transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  margin: 0 0 10px 10px;
+  cursor: pointer;
+}
 #contact-form .message,
+.form-envio .message,
 .comment-form .message {
   height: 30px;
   padding: 10px 20px;
@@ -2298,12 +2330,14 @@ a.button-one {
   font-family: 'Montserrat', sans-serif;
 }
 #contact-form .message.error,
+.form-envio .message.error,
 .comment-form .message.error {
   color: #e74c3c;
   background: rgba(246, 80, 80, 0.4);
   border: 1px solid #e74c3c;
 }
 #contact-form .message.success,
+.form-envio .message.success,
 .comment-form .message.success {
   color: #29b504;
   background: rgba(63, 220, 21, 0.4);

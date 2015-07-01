@@ -149,37 +149,6 @@ $(document).ready(function($) {
 		e.stopPropagation();
 	});
 
-	/* ---------------------------------------------------------------------- */
-	/*	Accordion
-	/* ---------------------------------------------------------------------- */
-	var clickElem = $('a.accord-link');
-
-	clickElem.on('click', function(e){
-		e.preventDefault();
-
-		var $this = $(this),
-			parentCheck = $this.parents('.accord-elem'),
-			accordItems = $('.accord-elem'),
-			accordContent = $('.accord-content');
-			
-		if( !parentCheck.hasClass('active')) {
-
-			accordContent.slideUp(400, function(){
-				accordItems.removeClass('active');
-			});
-			parentCheck.find('.accord-content').slideDown(400, function(){
-				parentCheck.addClass('active');
-			});
-
-		} else {
-
-			accordContent.slideUp(400, function(){
-				accordItems.removeClass('active');
-			});
-
-		}
-	});
-
 	/*-------------------------------------------------*/
 	/* =  Animated content
 	/*-------------------------------------------------*/
