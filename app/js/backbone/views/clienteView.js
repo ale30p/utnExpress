@@ -4,7 +4,10 @@ UtnExpress.Views.Cliente = Backbone.View.extend({
 		this.render();
 	},
 	render: function(eventName) {
-		$(this.$el).html(this.template({}));
+		var user = {
+			user: window.user.toJSON()
+		};
+		$(this.$el).html(this.template(user));
 	}	
 });
 

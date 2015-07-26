@@ -21,6 +21,7 @@
     "jquery-migrate": "~1.2.1",
     "gmap3": "~6.0.0",
     "handlebars": "~3.0.3",
-    "backbone.crossdomain": "~0.4.0"
+    "backbone.crossdomain": "~0.4.0",
+    "backbone-session": "~0.1.0"
   }
 }

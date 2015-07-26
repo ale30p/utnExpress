@@ -11,9 +11,13 @@ UtnExpress.Routers.App = Backbone.Router.extend({
 		'cliente/paquetes': 'clientePaquetes',
 		'cliente/servicios': 'clienteServicios',
 		'seguimiento/:codigo': 'seguimiento',
-		'login' : 'showLogin',
-		'profile' : 'showProfile',
-		'*default' : 'showHome'
+	},
+	initialize: function() {
+		window.session = new UtnExpress.Models.Session();
+		window.user = new UtnExpress.Models.Usuario();
+		if (window.session.getAuthStatus()) {
+			window.user.set(window.session.get('user'));
+		}		
 	},
 	index: function() {
 		window.collection.sectionsCollection._deleteSection();
@@ -41,22 +45,6 @@ UtnExpress.Routers.App = Backbone.Router.extend({
 		window.collection.sectionsCollection.add({id:'contactMap', className:''}, {at: 1});
 		window.collection.sectionsCollection.add({id:'contact', className:'contact-section'}, {at: 2});
 		var contact = new UtnExpress.Models.Contact({});
-		/*contact.save(
-			{
-				name: 'Alejandro',
-				email: 'alepereyra30@gmail.com',
-				message: 'Esto es un mensaje de prueba'
-			}, 
-			{
-				wait: true,
-				success: function(model, response, options){
-					alert(response);
-				},
-				error: function(model, xhr, options){
-					alert(xhr);
-				}
-			}
-		);*/
 		var contactView = new UtnExpress.Views.Contact({el: $('#contact-form'), model: contact});
 	},
 
@@ -64,12 +52,30 @@ UtnExpress.Routers.App = Backbone.Router.extend({
 		window.collection.sectionsCollection._deleteSection();
 		window.collection.sectionsCollection.add({id:'pageBannerSection', className:'page-banner-section', titulo: 'Registro'}, {at: 1});
 		window.collection.sectionsCollection.add({id:'resgistroSection', className:'services-offer-section'}, {at: 2});
+		if (!window.session.getAuthStatus()) {
+			var authorizeView = new UtnExpress.Views.Authorize({el:$('#authorize')});
+		}
+		/*if (!window.user.get('token')) {
+			var authorizeView = new UtnExpress.Views.Authorize({el:$('#authorize')});
+		}*/
+		var loginView = new UtnExpress.Views.Login({el: $('#login')});
 	},
 
 	cliente: function() {
-		window.collection.sectionsCollection._deleteSection();
-		window.collection.sectionsCollection.add({id:'pageBannerSection', className:'page-banner-section', titulo: 'Cliente'}, {at: 1});
-		window.collection.sectionsCollection.add({id:'clienteSection', className:'services-page-section'}, {at: 2});
+		if (window.session.getAuthStatus()) {
+			window.collection.sectionsCollection._deleteSection();
+			window.collection.sectionsCollection.add({id:'pageBannerSection', className:'page-banner-section', titulo: 'Cliente'}, {at: 1});
+			window.collection.sectionsCollection.add({id:'clienteSection', className:'services-page-section'}, {at: 2});
+		} else {
+			window.location.replace('#registro');
+		}
+		/*if (window.user.get('token')) {
+			window.collection.sectionsCollection._deleteSection();
+			window.collection.sectionsCollection.add({id:'pageBannerSection', className:'page-banner-section', titulo: 'Cliente'}, {at: 1});
+			window.collection.sectionsCollection.add({id:'clienteSection', className:'services-page-section'}, {at: 2});
+		} else {
+			window.location.replace('#registro');
+		}*/
 	},
 	
 	clienteEnvio: function() {
@@ -94,6 +100,5 @@ UtnExpress.Routers.App = Backbone.Router.extend({
 	            var clientePaqueteView = new UtnExpress.Views.ClientePaquete({el: $('#paquetesDetalles'), model: paquete});
     	    }
         });
-	}
-
+	},
 });

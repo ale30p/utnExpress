@@ -1,19 +1,26 @@
 UtnExpress.Views.ClientePaquete = Backbone.View.extend({
     template: utnExpress.templates.clientePaquete,
     initialize: function() {
+        this.getVehiculo();
         this.render();
-        this.map();
     },
     render: function(eventName) {
         $(this.$el).html(this.template(this.model.toJSON()));
     },
-    map: function() {
-    	var vehiculo = this.model.get('vehiculo'); 
-    	var latitud = parseFloat(vehiculo.latitud);
-    	var longitud = parseFloat(vehiculo.longitud);
-    	var cordenadas = [latitud, longitud];
-    	console.log(latitud);
-    	console.log(longitud);
+    getVehiculo: function() {
+        var patente = this.model.get('vehiculo').patente;
+        var vehiculo =  new UtnExpress.Models.Vehiculo({patente: patente});
+        var map =  _.bind(this.map, this);
+        vehiculo.fetch({
+            success: function(model, response, options) {
+                var latitud = parseFloat(model.get('latitud'));
+                var longitud = parseFloat(model.get('longitud'));
+                var cordenadas = [latitud, longitud];
+                map(cordenadas);
+            }
+        });
+    },
+    map: function(cordenadas) {
         $("#googleMap").width("100%").height("350px").gmap3({
              map:{
                 options: {

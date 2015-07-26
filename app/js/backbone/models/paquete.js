@@ -1,5 +1,5 @@
 UtnExpress.Models.Paquete = Backbone.Model.extend({
-	urlRoot: 'http://localhost:80/gps/paquetes',
+	urlRoot: window.urlRoot + 'paquetes',
 	idAttribute: 'codigo',
 	initialize: function (attr) {
         this.fetch();

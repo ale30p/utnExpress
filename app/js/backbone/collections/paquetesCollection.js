@@ -1,5 +1,6 @@
 UtnExpress.Collection.Paquetes = Backbone.Collection.extend({
-	url: 'http://localhost:80/gps/paquetes/list',
+	//url: window.urlRoot + 'paquetes/list',
+	url: window.urlRoot + 'paquetes',
 	model: UtnExpress.Models.Paquete,
 	initialize: function() {
 		var _this = this;

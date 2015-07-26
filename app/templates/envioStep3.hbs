@@ -1,0 +1,140 @@
+
+<div class="accord-content">
+  <br>
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table table-hover table-condensed">
+          <thead>
+            <tr>
+              <th colspan="8">Dirección origen</th>
+            </tr>
+            <tr>
+              <th>Calle</th>
+              <th>Nro</th>
+              <th>Piso</th>
+              <th>Dpto</th>
+              <th>País</th>
+              <th>Provincia</th>
+              <th>Localidad</th>
+              <th>CP</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>{{remitente.calle}}</th>
+              <th>{{remitente.nro}}</th>
+              <th>{{remitente.piso}}</th>
+              <th>{{remitente.dpto}}</th>
+              <th>{{remitente.pais}}</th>
+              <th>{{remitente.provincia}}</th>
+              <th>{{remitente.localidad}}</th>
+              <th>{{remitente.cp}}</th>
+            </tr>
+          </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table table-hover table-condensed">
+          <thead>
+            <tr>
+              <th colspan="8">Dirección destino</th>
+            </tr>
+            <tr>
+              <th>Calle</th>
+              <th>Nro</th>
+              <th>Piso</th>
+              <th>Dpto</th>
+              <th>País</th>
+              <th>Provincia</th>
+              <th>Localidad</th>
+              <th>CP</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>{{destinatario.calle}}</th>
+              <th>{{destinatario.nro}}</th>
+              <th>{{destinatario.piso}}</th>
+              <th>{{destinatario.dpto}}</th>
+              <th>{{destinatario.pais}}</th>
+              <th>{{destinatario.provincia}}</th>
+              <th>{{destinatario.localidad}}</th>
+              <th>{{destinatario.cp}}</th>
+            </tr>
+          </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table table-hover table-condensed">
+        <tbody>
+          <tr>
+            <td width="50px">Tipo Paquete</td>
+            <td>Paquete 1</td>
+          </tr>
+        </tbody>
+      </table>
+      <table class="table table-hover table-condensed">
+        <tbody>
+          <tr>
+            <td>Descripción</td>
+            <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore numquam illo omnis! Quod expedita, eligendi natus quidem necessitatibus blanditiis veritatis, perferendis eos veniam dolorem odio ipsum distinctio sit praesentium, pariatur.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <form id="form-pago" class="form-envio">
+        <legend>Factura</legend>
+        <fieldset>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Forma de Pago</label>  
+                <select name="forma_pago" class="form-control">
+                  <option value="1">Efectivo</option>
+                  <option value="2">Contra entrega</option></option>
+                  <option value="3">Tarjeta de crédito</option>
+                </select>
+              </div>
+            </div>
+            <!--<div class="col-md-6">
+              <div class="form-group">
+                <label>Tarjeta</label>  
+                <select name="tarjeta" class="form-control">
+                  <option value="1">Visa</option>
+                  <option value="2">Naranja</option>
+                  <option value="3">MasterCard</option>
+                </select>
+              </div>
+            </div>-->
+          </div>
+          <!--<div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Número de Tarjeta</label>  
+                <input type="text" class="form-control" name="nro_tarjeta" placeholder="Ingrese su número de tarjeta">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Fecha de vencimiento de la tarjeta</label>  
+                <input type="text" class="form-control" name="fcha_vto_tarjeta" placeholder="05/2020">
+              </div>
+            </div>
+          </div>-->
+          <div class="row">
+            <div class="col-md-12">
+                <input class="offset-right btn-continuar" value="Continuar" type="submit">
+            </div>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</div>

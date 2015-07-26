@@ -2318,7 +2318,7 @@ a.button-one {
   -moz-transition: all 0.2s ease-in-out;
   -webkit-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
-  margin: 0 0 10px 10px;
+  margin: 0 10px 10px 0;
   cursor: pointer;
 }
 #contact-form .message,

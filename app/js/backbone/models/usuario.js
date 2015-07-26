@@ -1,10 +1,10 @@
 UtnExpress.Models.Usuario = Backbone.Model.extend({
-	urlRoot: '/usuario',
 	defaults: {
-        userName: null,
-        pwd: null
+        firstName: null,
+        lastName: null,
+        email: null,
     },
     initialize: function () {
-        console.log("initialize client");
+        console.log("initialize user");
     }
 });
